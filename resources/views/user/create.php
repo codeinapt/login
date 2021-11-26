@@ -22,7 +22,7 @@
     <label for="Apellido">Apellido</label>
         <input class="form-control" type="text" value="" name="Apellido" id="Apellido">
     </div>
-    
+    <br>br
     <div class="form-group">
     <label for="Tipo-Documento">Tipo Documento</label>
         <select name="Tipo-Documeto">
@@ -67,7 +67,7 @@
 
     <input type="submit" value="Agregar Nuevo Usuario" class="btn btn-success">
 
-    <a href="{{ url('/user/index') }}" class="btn btn-info">Regresar</a>
+    <a href="{{ url('user/') }}" class="btn btn-info">Regresar</a>
 
     
     
