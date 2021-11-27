@@ -15,6 +15,16 @@ class CreateLoginsTable extends Migration
     {
         Schema::create('logins', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->enum('tipo-documento',['Cedula Ciudadania','Cedula Extranjeria','Tarjeta Identidad']);
+            $table->integer('documento');
+            $table->date('fecha-nacimiento');
+            $table->string('ciudad-nacimiento');
+            $table->integer('telefono');
+            $table->string('usuario')->uniqued();        
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

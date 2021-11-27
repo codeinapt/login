@@ -15,7 +15,7 @@ class LoginController extends Controller
     public function index()
     {
         //
-        return view('user.index');
+        return view('login.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class LoginController extends Controller
     public function create()
     {
         // Función para crear nuevos usuarios
-        return view('user.create');
+        return view('login.create');
     }
 
     /**
@@ -37,7 +37,10 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Recepcion de datos resividos
+        $datosLogin = request()->except('_token');
+        Login::insert($datosLogin);
+        return redirect('login')->with('mensaje','Usuario agregado con éxito');
     }
 
     /**

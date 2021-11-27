@@ -18,7 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user', function(){
+/*Route::get('/user', function(){
     return view('user.index');
 });
 Route::get('/user/create',[LoginController::class,'create']);
+*/
+Route::resource('login',LoginController::class);

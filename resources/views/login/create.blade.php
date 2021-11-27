@@ -6,9 +6,9 @@
 
 <!-- Formulario para el ingreso de datos proporcionado por el usuario -->
 <div class="container">
-<form action="{{ url('/user') }}" method="post" enctype="multipart/form-data">
+<form action="{{ url('/login') }}" method="post" enctype="multipart/form-data">
     <!-- Imprecion de llave de seguridad que solicita laravel para recepcionar información -->
-   
+   @csrf
     <h1>Agregar Nuevo Usuario</h1>
 
 
@@ -22,14 +22,21 @@
     <label for="Apellido">Apellido</label>
         <input class="form-control" type="text" value="" name="Apellido" id="Apellido">
     </div>
-    <br>br
+    <br>
     <div class="form-group">
     <label for="Tipo-Documento">Tipo Documento</label>
-        <select name="Tipo-Documeto">
+        <select name="Tipo-Documento">
             <option value="1">Cedula Ciudadania</option>
             <option value="2">Cedula Extranjeria</option>
             <option value="3">Tarjeta Identidad</option>
         </select>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+    <label for="Documento">Documento</label>
+        <input class="form-control" type="number" value="" name="Documento" id="Documento">
     </div>
 
     <br>
@@ -67,7 +74,7 @@
 
     <input type="submit" value="Agregar Nuevo Usuario" class="btn btn-success">
 
-    <a href="{{ url('user/') }}" class="btn btn-info">Regresar</a>
+    <a href="{{ url('login/') }}" class="btn btn-info">Regresar</a>
 
     
     
